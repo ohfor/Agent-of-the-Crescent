@@ -1,8 +1,8 @@
-# Shadow's Redemption - Opening Sequence
+# Agent of the Crescent - Opening Sequence
 
 ## Stage 1 Implementation: Message Box Narrative
 
-When the player selects the "Nocturnal's Fallen" start from Alternate Perspective, the following sequence plays before spawning them in Beggar's Row.
+When the player selects the "Agent of the Crescent" start from Alternate Perspective, the following sequence plays before spawning them in Beggar's Row.
 
 ### Technical Flow
 1. Player selects start option from AP dragon menu
@@ -19,14 +19,16 @@ When the player selects the "Nocturnal's Fallen" start from Alternate Perspectiv
 ### Box 1 - The Void
 > *Darkness.*
 > 
-> *Not the comfortable darkness of shadow, but the cold emptiness of failure. Of purgatory. Of a soul suspended between punishment and purpose.*
+> *Not the comfortable darkness of shadow, but the cold emptiness of failure. Of purgatory. Of a soul suspended between punishment and oblivion.*
 >
 > *[Continue]*
 
 ### Box 2 - The Memory
-> *You remember... fragments. A title: Nightingale. A duty: guardian of twilight. A moment: steel in darkness, a choice unmade, a betrayer unspoken.*
+> *You remember... fragments. An oath spoken in twilight. A duty sworn in shadow. A moment when steel flashed in darkness, when a choice hung in the air like held breath.*
 >
-> *You remember Gallus falling. You remember the Key vanishing into treacherous hands. You remember having the chance to stop it.*
+> *A blade falling. A brother's betrayal. A Key vanishing into treacherous hands.*
+>
+> *You remember having the chance to act.*
 >
 > *You remember hesitating.*
 >
@@ -42,16 +44,16 @@ When the player selects the "Nocturnal's Fallen" start from Alternate Perspectiv
 > *[Continue]*
 
 ### Box 4 - The Sentence
-> *"Your soul belongs to me. It always has. I could cast you into the Evergloam for eternity - a shadow among shadows, aware but powerless, forever."*
+> *"Your soul belongs to me. It always has. I could unmake you utterly - a shadow dispersed, aware of nothing, forever."*
 >
-> *"But I am not wasteful. The Key remains lost. The betrayer breathes still. And you... you will have the chance to correct your failure."*
+> *"But I am not wasteful. The Key remains lost. The betrayer still breathes. And you... you owe me a debt that can only be paid in service."*
 >
 > *[Continue]*
 
 ### Box 5 - The Price
-> *"I strip from you everything you were. Your skills. Your power. Your very name. You will be nothing - less than nothing. A beggar in the gutters of Riften."*
+> *"I strip from you everything you were. Your skills. Your strength. Your very name. You will be nothing - less than nothing. A beggar in the gutters of Riften."*
 >
-> *"Earn back what you have lost. Find the Guild. Find the betrayer. Return my Key."*
+> *"Find the Guild. Find the betrayer. Return my Key."*
 >
 > *"Succeed, and you may yet know my favor again. Fail..."*
 >
@@ -64,75 +66,106 @@ When the player selects the "Nocturnal's Fallen" start from Alternate Perspectiv
 >
 > *You are in Riften. You are no one. You have nothing.*
 >
-> *But somewhere in the back of your mind, shadows whisper. And you remember what must be done.*
->
-> *[Continue]*
-
-### Box 7 - Final (Optional - Game Tips)
-> *You have begun Shadow's Redemption.*
->
-> *• Find the Thieves Guild by seeking Brynjolf in Riften's marketplace*
-> *• Steal and survive - prove your worth through shadow's work*
-> *• Check your inventory for a note with guidance*
+> *But clutched in your hand, cold metal. And in the back of your mind, shadows whisper of what must be done.*
 >
 > *[Begin]*
 
 ---
 
-## Stage 2 Enhancement: Voiced Nocturnal Scene
+## Lore Considerations
 
-In Stage 2, we could replace Boxes 3-5 with an actual scene in a cloned Twilight Sepulcher interior where Nocturnal's manifestation speaks to the player.
+### What We Know (Canon)
+- The Nightingale Trinity always consists of exactly THREE members
+- At the time of Gallus's murder: Gallus, Mercer Frey, Karliah
+- Nightingales are bound to guard the Twilight Sepulcher
+- Nocturnal's relationship with her servants is transactional, not devotional
+- The Evergloam is Nocturnal's plane of Oblivion
+- Gallus was murdered ~25 years before 4E 201
+- The murder weapon is never specified in canon
 
-### Scene Description (Future Implementation)
-- Player loads into cloned Sepulcher inner sanctum
-- Nocturnal's manifestation (giant spectral form) appears
-- Camera focuses on her
-- Voiced dialogue plays (or subtitled if we don't have VA)
-- Visual effects: shadow tendrils, oppressive darkness at edges of screen
-- After dialogue, screen whites out / player "dissolves"
-- Fade to black, then spawn in Beggar's Row
+### What We Deliberately Keep Vague
+- The player's exact role in past events
+- Whether they held any formal title or position
+- How exactly they were "positioned to act"
+- Why they hesitated
+- The specific nature of their punishment
 
-### Dialogue Script (For Future Voice Acting)
+This ambiguity serves multiple purposes:
+1. Avoids contradicting the established Trinity lore
+2. Allows player projection and interpretation
+3. Creates mystery that can be revealed (or not) later
+4. Gives us flexibility for future narrative development
 
-**NOCTURNAL:**
-*"Ah. You're aware again. Good."* (pause)
-*"Do you know how long you've drifted in my realm? No? Time means little to the dead. Or the damned."*
+### The "Agent of the Crescent" Title
+This is NOT a title the player held in the past. Rather, it represents:
+- Their current role as Nocturnal's agent of change
+- The crescent moon symbolism (waxing toward fullness/redemption)
+- Their mission to restore what was broken
 
-*"Gallus Desidenius. You remember the name, don't you? You watched him die. You COULD have prevented it."*
-
-*"Don't speak. I didn't summon your consciousness to hear excuses."*
-
-*"The one called Mercer Frey stole more than a life that night. He took the Skeleton Key. MY Key. The lock of limitless potential, now in the hands of a mortal too stupid to understand what he possesses."*
-
-*"And you - my trusted agent - you had the chance to stop him. One blade in the dark. One decisive moment."*
-
-*"But you hesitated. Perhaps you didn't want to kill a fellow Nightingale without proof. Perhaps you were weak. The reason doesn't matter. Only the failure."*
-
-(tone shifts - colder, more business-like)
-
-*"I could unmake you. It would be trivial. But I am pragmatic, if nothing else. The Key must return. Frey must fall. And you... you owe me a debt that can only be paid in service."*
-
-*"I'm giving you back to the mortal world. Stripped of everything you were. No skills. No name. No identity. You'll wake in the gutters of Riften with nothing but rags and purpose."*
-
-*"Find the Guild. Rise among them. And when you finally face the betrayer - do not hesitate again."*
-
-*"Succeed, and I may restore what you've lost. Fail me twice..."* (pause) *"...and there won't be enough of you left to suffer."*
-
-*"Go."*
-
-(scene ends)
+The player becomes the Agent of the Crescent through their redemption arc - they weren't one before.
 
 ---
 
-## Alternative: Dream Sequence
+## Stage 2 Enhancement: Voiced Nocturnal Scene
 
-If the voiced scene is too ambitious even for Stage 2, an intermediate option:
+In Stage 2, we could replace Boxes 3-5 with an actual scene in a custom void space where Nocturnal's presence manifests.
+
+### Scene Description (Future Implementation)
+- Player loads into a void/shadow space (not the actual Sepulcher)
+- Nocturnal's presence manifests (shadow tendrils, disembodied voice, or spectral form)
+- Camera work emphasizes her power and the player's insignificance
+- Voiced dialogue plays (or subtitled if no VA)
+- Visual effects: creeping shadows, oppressive darkness
+- After dialogue, player "dissolves" into shadow
+- Fade to black, then spawn in Beggar's Row
+
+### Draft Dialogue Script (For Future Voice Acting)
+
+**NOCTURNAL:**
+*(cold, measured)*
+*"Ah. You're aware again. Good."*
+
+*(pause)*
+*"Do you know how long you've drifted in my realm? No? Time means little to shadows. Or to the damned."*
+
+*"You remember fragments, don't you? The moment when everything could have been different. When one decisive act might have preserved what was mine."*
+
+*"Don't speak. I didn't summon your consciousness to hear excuses."*
+
+*(tone shifts - harder)*
+*"The one called Mercer Frey stole more than a life that night. He took the Skeleton Key. MY Key. And you - you had the chance to stop him."*
+
+*"But you hesitated. Perhaps you weren't certain. Perhaps you were weak. The reason doesn't matter. Only the failure."*
+
+*(businesslike)*
+*"I could unmake you. It would be trivial. But I am pragmatic, if nothing else. The Key must return. The betrayer must fall. And you... you owe me a debt that can only be paid in service."*
+
+*"I'm giving you back to the mortal world. Stripped of everything you were. No skills. No name. No identity. You'll wake in the gutters of Riften with nothing but rags and purpose."*
+
+*"Find the Guild. Rise among them. And when you finally face the betrayer..."*
+
+*(pause, emphasis)*
+*"...do not hesitate again."*
+
+*"Succeed, and I may restore what you've lost. Fail me twice..."*
+
+*(cold finality)*
+*"...and there won't be enough of you left to suffer."*
+
+*"Go."*
+
+---
+
+## Alternative: Dream Sequence (Stage 2 Lite)
+
+If the full voiced scene is too ambitious, an intermediate option:
 
 - Player spawns in Beggar's Row first
 - After first sleep (using OnSleepStop event), a "dream" sequence plays
 - Dream uses message boxes or image slides to show fragmented memories
 - Nocturnal's dialogue appears as text overlays
 - Player wakes with a clearer understanding of their mission
+- Could include flashes of visual "memories" (Gallus's ghost model, the Skeleton Key, etc.)
 
 This is simpler than a full scene but more immersive than just startup message boxes.
 
@@ -141,61 +174,70 @@ This is simpler than a full scene but more immersive than just startup message b
 ## Spawn Location Details
 
 ### Cell: `RiftenBeggarRow`
-### Specific Position: 
-Need to identify safe spawn coordinates. Candidates:
+### Spawn Point: XMarker placed in a discrete corner
 - Near one of the bedrolls (thematically appropriate - you've been sleeping here)
-- Against a wall in a corner (safe from any NPC pathing)
-- Near the entrance (easy orientation)
+- Against a wall (safe from NPC pathing issues)
+- Facing toward the main area (easy orientation)
 
 ### Time of Day
-Set to early morning (6 AM?) - you're waking up
-
-### Weather
-N/A (interior cell)
+- Set to early morning (~6 AM) - you're "waking up"
+- Alternatively, let AP handle this naturally
 
 ### Player State on Spawn
 - Standing position
-- Looking toward exit
+- Default facing
 - No active effects
-- Hunger/Cold/etc. at baseline if survival mods active
+- Survival stats at baseline (if survival mods active)
 
 ---
 
-## Quest Initialization Script (Pseudocode)
+## Starting Equipment
 
-```papyrus
-Event OnInit()
-    ; Called when quest starts
-    
-    ; Give starting items
-    Game.GetPlayer().AddItem(SR_TarnishedInsignia, 1)
-    Game.GetPlayer().AddItem(SR_NocturnalReminder, 1)
-    Game.GetPlayer().AddItem(ClothesBeggarRobes, 1)
-    Game.GetPlayer().AddItem(ClothesBeggarBoots, 1)
-    Game.GetPlayer().AddItem(Apple, 1) ; or custom bruised apple
-    
-    ; Equip beggar clothes
-    Game.GetPlayer().EquipItem(ClothesBeggarRobes)
-    Game.GetPlayer().EquipItem(ClothesBeggarBoots)
-    
-    ; Remove any default items AP might give
-    ; (investigate what AP does by default)
-    
-    ; Set Wintersun deity to Nocturnal
-    ; (implementation depends on Wintersun API)
-    
-    ; Start tracking
-    SetStage(10)
-    
-    ; Register for events
-    RegisterForSingleUpdate(5.0) ; Start tracking loop after 5 seconds
-EndEvent
+| Item | Purpose |
+|------|---------|
+| Ragged Robes | Starting armor - you're destitute |
+| Ragged Footwraps | Footwear - barely functional |
+| Tarnished Nightingale Insignia | Quest item - link to your past |
+
+### The Tarnished Insignia
+- A MiscObject (weightless, no value)
+- Cannot be sold or dropped (quest item flag)
+- Description hints at its significance without explaining
+- Will be relevant later in the questline (transformation to Restored Insignia)
+
+---
+
+## JSON Registration (Alternate Perspective)
+
+```json
+{
+  "mod": "AgentOfTheCrescent.esp",
+  "id": "0xD67",
+  "text": "Agent of the Crescent",
+  "description": "A soul in shadow, bound by an oath half-remembered. Nocturnal offers one chance at redemption - find the betrayer, return what was stolen, or fade into nothing.",
+  "color": "0x9B59B6"
+}
 ```
 
 ---
 
-## Character Background Text
+## Current Implementation Status
 
-For character creation or any "background" field if AP supports it:
+### Stage 1 MVP (COMPLETE)
+- [x] Four message boxes displaying dream sequence
+- [x] Player spawns in Beggar's Row
+- [x] Starting equipment granted
+- [x] Tarnished Insignia in inventory
+- [x] Quest initializes correctly via AP
 
-> *Once a Nightingale, an elite agent of Nocturnal herself. When Mercer Frey betrayed the Thieves Guild and murdered Gallus Desidenius, you were positioned to intervene - and failed to act. For decades, your soul has paid the price. Now Nocturnal offers one chance at redemption: return the stolen Skeleton Key and bring down the betrayer, or fade into nothing.*
+### Stage 2 (PLANNED)
+- [ ] Expand to full 6-box sequence
+- [ ] Add visual/audio elements if possible
+- [ ] Consider voiced implementation
+- [ ] Add starting note with guidance
+
+### Future Considerations
+- Integration with Wintersun (auto-set Nocturnal as deity?)
+- Opening scene in custom cell
+- Memory flashbacks during gameplay
+- Connection to main Thieves Guild questline events
