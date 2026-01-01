@@ -148,9 +148,19 @@ A: Yes. Your pact with Nocturnal doesn't prevent other transformations, though s
 
 ---
 
+## Documentation
+
+- **[CREATION_KIT_GUIDE.md](CREATION_KIT_GUIDE.md)** - Step-by-step Creation Kit setup
+- **[ALTERNATE_PERSPECTIVE_INTEGRATION.md](ALTERNATE_PERSPECTIVE_INTEGRATION.md)** - Complete guide to AP quest integration (reusable pattern)
+- **[design/](design/)** - Design documents and narrative content
+
+---
+
 ## Changelog
 
-### Version 0.1.0 (Stage 1 MVP)
-- Initial release
-- Complete quest arc
-- All Stage 1 features implemented
+### Version 0.1.0 (Stage 1 MVP - Hello World)
+- Initial Alternate Perspective integration working
+- Dream sequence (4 messages) displaying correctly
+- Player spawns in Beggar's Row with correct equipment
+- Tarnished Insignia quest item functional
+- Documented reusable AP integration pattern

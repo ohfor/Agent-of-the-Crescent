@@ -34,10 +34,16 @@ Message Property AotC_Dream04 Auto
 {Dream sequence message 4 - The Awakening}
 
 Event OnInit()
-    ; AP may just start the quest without setting a stage
-    ; Check if we're running and stage 10 hasn't been set yet
-    If IsRunning() && GetStage() < 10
-        SetStage(10)
+    Debug.Notification("AotC OnInit fired!")
+    Debug.Trace("[AotC] OnInit - IsRunning: " + IsRunning() + ", Stage: " + GetStage())
+    
+    If IsRunning()
+        If GetStage() >= 10
+            ; Stage already set by AP, run directly
+            StartPlayerInBeggarsRow()
+        Else
+            SetStage(10)
+        EndIf
     EndIf
 EndEvent
 
