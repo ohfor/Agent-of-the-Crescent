@@ -28,8 +28,11 @@ This guide walks you through creating the ESP file in Creation Kit. By the end, 
 4. Check these masters:
    - [x] Skyrim.esm
    - [x] Update.esm
-   - [x] Dawnguard.esm (we'll need Riften interiors)
-5. Click **OK** and wait for it to load (this takes a while first time)
+5. Click **OK**
+
+> **Note**: We don't need Dawnguard.esm for Hello World. RiftenBeggarRow is a vanilla Skyrim.esm cell. We may add Dawnguard as a master later if we reference DLC content.
+
+6. Wait for it to load (this takes a while first time)
 
 ### Create Your Plugin
 
@@ -48,7 +51,7 @@ Messages are the popup text boxes the player sees.
 1. In the left panel, navigate to: `Miscellaneous > Message`
 2. Right-click > `New`
 3. Fill in:
-   - **ID**: `AoC_Dream01`
+   - **ID**: `AotC_Dream01`
    - **Title**: (leave blank)
    - **Message Text**:
      ```
@@ -64,7 +67,7 @@ Messages are the popup text boxes the player sees.
 
 1. Right-click > `New` in Messages
 2. Fill in:
-   - **ID**: `AoC_Dream02`
+   - **ID**: `AotC_Dream02`
    - **Message Text**:
      ```
      A voice pierces the void - ancient, feminine, disappointed.
@@ -78,7 +81,7 @@ Messages are the popup text boxes the player sees.
 
 1. Right-click > `New`
 2. Fill in:
-   - **ID**: `AoC_Dream03`
+   - **ID**: `AotC_Dream03`
    - **Message Text**:
      ```
      "I do not give second chances. But I am... curious. The shadows have need of a champion once more."
@@ -92,7 +95,7 @@ Messages are the popup text boxes the player sees.
 
 1. Right-click > `New`
 2. Fill in:
-   - **ID**: `AoC_Dream04`
+   - **ID**: `AotC_Dream04`
    - **Message Text**:
      ```
      You wake with a gasp.
@@ -114,7 +117,7 @@ Messages are the popup text boxes the player sees.
 1. Navigate to: `Items > MiscItem`
 2. Right-click > `New`
 3. Fill in:
-   - **ID**: `AoC_TarnishedInsignia`
+   - **ID**: `AotC_TarnishedInsignia`
    - **Name**: `Tarnished Insignia`
    - **Model**: `Clutter\Amulets\AmuletofArticulation01.nif` (or any small trinket mesh)
    - **Value**: 0
@@ -143,7 +146,7 @@ We need an XMarker in Beggar's Row to spawn the player.
 4. Drag an XMarker into the Render Window
 5. Position it somewhere sensible (near a bedroll, out of the way)
 6. Double-click the marker to open its properties
-7. Change the **Reference ID** to: `AoC_SpawnMarker`
+7. Change the **Reference ID** to: `AotC_SpawnMarker`
 8. Click **OK**
 
 **Tip**: Use the `RiftenBeggarRow` cell - that's where Riften's homeless NPCs live, under the city.
@@ -159,7 +162,7 @@ This is the heart of our mod.
 1. Navigate to: `Character > Quest`
 2. Right-click > `New`
 3. In the **Quest Data** tab:
-   - **ID**: `AoC_StartQuest`
+   - **ID**: `AotC_StartQuest`
    - **Priority**: 50
    - **Type**: Leave as default (None or Miscellaneous)
    - **Flags**: 
@@ -181,17 +184,17 @@ This is the heart of our mod.
 
 1. Click the **Scripts** tab
 2. Click **Add**
-3. Type `AoC_StartQuest` and select it
+3. Type `AotC_StartQuest` and select it
    - If it's not there, you need to compile it first (see Troubleshooting)
 4. Once attached, click on `AoC_StartQuest` in the list
 5. Click **Properties**
 6. Fill in each property:
    - `PlayerRef` → Point to your PlayerRef alias
-   - `AoC_SpawnMarker` → Point to your XMarker
-   - `AoC_TarnishedInsignia` → Point to your MiscItem
-   - `AoC_RaggedRobes` → Type `0010A86E` or search for RaggedRobes
-   - `AoC_RaggedFootwraps` → Type `000261C0` or search for ClothesBootsBedraggled
-   - `AoC_Dream01` through `AoC_Dream04` → Point to your Messages
+   - `AotC_SpawnMarker` → Point to your XMarker
+   - `AotC_TarnishedInsignia` → Point to your MiscItem
+   - `AotC_RaggedRobes` → Type `0010A86E` or search for RaggedRobes
+   - `AotC_RaggedFootwraps` → Type `000261C0` or search for ClothesBootsBedraggled
+   - `AotC_Dream01` through `AotC_Dream04` → Point to your Messages
 
 ### Quest Stages Tab (Optional but Recommended)
 
@@ -210,7 +213,7 @@ This is the heart of our mod.
 
 We need to know the FormID of `AoC_StartQuest` for the JSON file.
 
-1. In the Object Window, find your quest: `Character > Quest > AoC_StartQuest`
+1. In the Object Window, find your quest: `Character > Quest > AotC_StartQuest`
 2. The FormID is shown in the list (e.g., `xx000800`)
 3. The `xx` is the load order position - we just need the last part
 4. If it's `00000800`, that's `2048` in decimal
@@ -234,7 +237,7 @@ Update your `AgentOfTheCrescent.json`:
 
 If Creation Kit didn't auto-compile:
 
-1. Open `src/Scripts/Source/AoC_StartQuest.psc` in a text editor
+1. Open `src/Scripts/Source/AotC_StartQuest.psc` in a text editor
 2. In Creation Kit, go to `Gameplay > Papyrus Script Manager`
 3. Click **Compile All** (or find your script and compile it individually)
 4. Check the output for errors
@@ -252,7 +255,7 @@ Copy files to your Skyrim Data folder:
 Data/
 ├── AgentOfTheCrescent.esp
 ├── Scripts/
-│   └── AoC_StartQuest.pex
+│   └── AotC_StartQuest.pex
 └── SKSE/
     └── AlternatePerspective/
         └── AgentOfTheCrescent.json
@@ -272,7 +275,7 @@ Data/
 ## Troubleshooting
 
 ### "Script not found" when attaching to quest
-- Make sure `AoC_StartQuest.psc` is in `Data/Scripts/Source/`
+- Make sure `AotC_StartQuest.psc` is in `Data/Scripts/Source/`
 - Try compiling manually via Papyrus Script Manager
 
 ### Quest doesn't appear in AP menu
@@ -281,7 +284,7 @@ Data/
 - Make sure ESP is enabled in your load order
 
 ### Player doesn't move to Beggar's Row
-- Verify `AoC_SpawnMarker` exists and is properly linked
+- Verify `AotC_SpawnMarker` exists and is properly linked
 - Check script properties are all filled in
 
 ### "Beggar's Row" cell not found
