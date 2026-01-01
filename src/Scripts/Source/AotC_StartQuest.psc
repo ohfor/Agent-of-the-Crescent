@@ -1,6 +1,7 @@
 Scriptname AotC_StartQuest extends Quest
 {Agent of the Crescent - Alternate Perspective Start Quest
- Handles the dream sequence and spawns player in Beggar's Row}
+ Handles the dream sequence and spawns player in Beggar's Row.
+ After completion, starts the main quest and stops itself.}
 
 ; =============================================================================
 ; PROPERTIES - These get filled in Creation Kit
@@ -33,13 +34,19 @@ Message Property AotC_Dream03 Auto
 Message Property AotC_Dream04 Auto
 {Dream sequence message 4 - The Awakening}
 
+Quest Property AotC_MainQuest Auto
+{The main quest to start after spawning}
+
+; =============================================================================
+; INITIALIZATION
+; =============================================================================
+
 Event OnInit()
-    Debug.Notification("AotC OnInit fired!")
-    Debug.Trace("[AotC] OnInit - IsRunning: " + IsRunning() + ", Stage: " + GetStage())
+    Debug.Trace("[AotC] StartQuest OnInit - IsRunning: " + IsRunning() + ", Stage: " + GetStage())
     
     If IsRunning()
         If GetStage() >= 10
-            ; Stage already set by AP, run directly
+            ; Stage already set by AP before script initialized
             StartPlayerInBeggarsRow()
         Else
             SetStage(10)
@@ -51,7 +58,7 @@ EndEvent
 ; EVENT - Fires when ANY stage is set on this quest
 ; =============================================================================
 
-Event OnStageSet(int auiStageID, int auiItemID)
+Event OnStageSet(Int auiStageID, Int auiItemID)
     If auiStageID == 10
         StartPlayerInBeggarsRow()
     EndIf
@@ -62,29 +69,40 @@ EndEvent
 ; =============================================================================
 
 Function StartPlayerInBeggarsRow()
+    Debug.Trace("[AotC] Starting player in Beggar's Row...")
+    
     ; Show the dream sequence
     ShowDreamSequence()
     
-    ; Strip player of everything
+    ; Strip player of everything (AP may have given default items)
     PlayerRef.RemoveAllItems()
     
     ; Give starting equipment
-    PlayerRef.AddItem(AotC_RaggedRobes, 1, true)
-    PlayerRef.AddItem(AotC_RaggedFootwraps, 1, true)
-    PlayerRef.AddItem(AotC_TarnishedInsignia, 1, true)
+    PlayerRef.AddItem(AotC_RaggedRobes, 1, True)
+    PlayerRef.AddItem(AotC_RaggedFootwraps, 1, True)
+    PlayerRef.AddItem(AotC_TarnishedInsignia, 1, True)
     
     ; Equip the clothes
-    PlayerRef.EquipItem(AotC_RaggedRobes, false, true)
-    PlayerRef.EquipItem(AotC_RaggedFootwraps, false, true)
+    PlayerRef.EquipItem(AotC_RaggedRobes, False, True)
+    PlayerRef.EquipItem(AotC_RaggedFootwraps, False, True)
     
     ; Move player to Beggar's Row
     PlayerRef.MoveTo(AotC_SpawnMarker)
+    
+    ; Start the main quest
+    If AotC_MainQuest
+        AotC_MainQuest.Start()
+        Debug.Trace("[AotC] Main quest started")
+    Else
+        Debug.Trace("[AotC] WARNING: Main quest property not set!")
+    EndIf
     
     ; Clean up - stop this quest after a brief delay
     RegisterForSingleUpdate(1.0)
 EndFunction
 
 Event OnUpdate()
+    Debug.Trace("[AotC] StartQuest stopping...")
     Stop()
 EndEvent
 
